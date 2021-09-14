@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct" />
+
+  <Commands package="guidCqrsVsixPackage">
+    <Buttons>
+      <Button guid="guidCqrsVsixPackageCmdSet" id="AddCommandAndQueryId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_INCLUDEEXCLUDE" />
+        <Icon guid="ImageCatalogGuid" id="TriggerScript" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Add platform code</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidCqrsVsixPackageCmdSet" id="AddCommandAndQueryId"  context="guidUIContext"/>
+  </VisibilityConstraints>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidCqrsVsixPackage" value="{8d1316b8-207c-4721-b3b7-6bc2fef36742}" />
+    <GuidSymbol name="guidUIContext" value="{68760bd3-80f0-4901-818d-c4656aaa08e9}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidCqrsVsixPackageCmdSet" value="{6247f181-2f18-49c9-90e2-78fd92bc292c}">
+      <IDSymbol name="AddCommandAndQueryId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
